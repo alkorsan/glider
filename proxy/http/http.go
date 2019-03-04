@@ -129,7 +129,7 @@ func (s *HTTP) Serve(c net.Conn) {
 	cleanHeaders(reqHeader)
 
 	// tell the remote server not to keep alive
-	reqHeader.Set("Connection", "close")
+	reqHeader.Set("Connection", "keep-alive")
 
 	u, err := url.ParseRequestURI(requestURI)
 	if err != nil {
